@@ -106,7 +106,8 @@
 }
 
 - (IBAction)sendTagButton:(id)sender {
-    if (self.tagKey.text && self.tagValue.text) {
+    if (self.tagKey.text && self.tagKey.text.length
+        && self.tagValue.text && self.tagValue.text.length) {
         [OneSignal sendTag:self.tagKey.text
                      value:self.tagValue.text
                  onSuccess:^(NSDictionary *result) {
