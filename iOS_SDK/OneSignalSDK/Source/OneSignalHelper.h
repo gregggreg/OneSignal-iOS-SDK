@@ -36,7 +36,7 @@
 @interface OneSignalHelper : NSObject
 
 // - Web
-+ (OneSignalWebView*)webVC;
++ (OneSignalWebView*)webVC NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication");
 + (void) displayWebView:(NSURL*)url;
 
 // - Notification Opened
