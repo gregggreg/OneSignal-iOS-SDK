@@ -43,6 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OSInAppMessageViewController : UIViewController <OSInAppMessageViewDelegate, WKScriptMessageHandler>
 
 @property (weak, nonatomic, nullable) id<OSInAppMessageViewControllerDelegate> delegate;

@@ -28,6 +28,7 @@
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
 
+NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OneSignalWebView : UIViewController <WKNavigationDelegate, UIAdaptivePresentationControllerDelegate>
 
 @property(nonatomic, copy)NSURL *url;

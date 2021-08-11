@@ -43,6 +43,7 @@ typedef struct os_last_location {
     double horizontalAccuracy;
 } os_last_location;
 
+NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OneSignalLocation : NSObject
 
 + (OneSignalLocation*) sharedInstance;

@@ -31,6 +31,7 @@
 #import "OneSignalNotificationSettings.h"
 
 // Used for iOS 9 & 8
+NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OneSignalNotificationSettingsIOS8 : NSObject <OneSignalNotificationSettings>
 
 @end

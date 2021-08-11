@@ -39,6 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OSMessagingController : NSObject <OSInAppMessageViewControllerDelegate, OSTriggerControllerDelegate, OSMessagingControllerDelegate>
 
 @property (class, readonly) BOOL isInAppMessagingPaused;

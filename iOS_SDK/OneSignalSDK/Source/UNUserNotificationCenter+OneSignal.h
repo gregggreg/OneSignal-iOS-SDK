@@ -30,6 +30,7 @@
 
 #import "OneSignal.h"
 
+NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OneSignalUNUserNotificationCenter : NSObject
 + (void)swizzleSelectors;
 + (void)setUseiOS10_2_workaround:(BOOL)enable;

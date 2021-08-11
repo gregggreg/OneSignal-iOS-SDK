@@ -33,6 +33,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
+NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OneSignalHelper : NSObject
 
 // - Web

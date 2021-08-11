@@ -28,6 +28,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface UIApplicationOverrider : NSObject
 +(void)reset;
 

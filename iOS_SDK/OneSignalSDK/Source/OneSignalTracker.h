@@ -27,6 +27,7 @@
 #import <Foundation/Foundation.h>
 #import "OSInfluence.h"
 
+NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OneSignalTracker : NSObject
 
 + (void)onFocus:(BOOL)toBackground;
