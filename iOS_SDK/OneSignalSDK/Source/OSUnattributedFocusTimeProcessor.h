@@ -29,7 +29,6 @@
 #import "OneSignalCommonDefines.h"
 #import "OSBaseFocusTimeProcessor.h"
 
-NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OSUnattributedFocusTimeProcessor : OSBaseFocusTimeProcessor
 
 @end

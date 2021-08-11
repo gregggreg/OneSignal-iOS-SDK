@@ -43,13 +43,13 @@ static let DELAY_TIME = 30;
     return self;
 }
 
-- (void)beginDelayBackgroundTask {
+- (void)beginDelayBackgroundTask NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     delayBackgroundTask = [UIApplication.sharedApplication beginBackgroundTaskWithExpirationHandler:^{
         [self endDelayBackgroundTask];
     }];
 }
 
-- (void)endDelayBackgroundTask {
+- (void)endDelayBackgroundTask NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     [OneSignal onesignal_Log:ONE_S_LL_DEBUG
                      message:[NSString stringWithFormat:@"OSAttributedFocusTimeProcessor:endDelayBackgroundTask:%lu", (unsigned long)delayBackgroundTask]];
     [UIApplication.sharedApplication endBackgroundTask:delayBackgroundTask];

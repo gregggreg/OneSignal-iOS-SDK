@@ -71,13 +71,13 @@ static BOOL lastOnFocusWasToBackground = YES;
     lastOpenedTime = lastOpened;
 }
 
-+ (void)beginBackgroundFocusTask {
++ (void)beginBackgroundFocusTask NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     focusBackgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         [OneSignalTracker endBackgroundFocusTask];
     }];
 }
 
-+ (void)endBackgroundFocusTask {
++ (void)endBackgroundFocusTask NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     [[UIApplication sharedApplication] endBackgroundTask: focusBackgroundTask];
     focusBackgroundTask = UIBackgroundTaskInvalid;
 }

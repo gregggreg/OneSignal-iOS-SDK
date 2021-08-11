@@ -166,13 +166,13 @@ static OneSignalLocation* singleInstance = nil;
     }
 }
 
-+ (void)beginTask {
++ (void)beginTask NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     fcTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         [OneSignalLocation endTask];
     }];
 }
 
-+ (void)endTask {
++ (void)endTask NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     [[UIApplication sharedApplication] endBackgroundTask: fcTask];
     fcTask = UIBackgroundTaskInvalid;
 }
@@ -266,7 +266,7 @@ static OneSignalLocation* singleInstance = nil;
     started = true;
 }
 
-+ (void)showLocationSettingsAlertController {
++ (void)showLocationSettingsAlertController NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     onesignal_Log(ONE_S_LL_DEBUG, @"CLLocationManager permissionStatus kCLAuthorizationStatusDenied fallaback to settings");
     [[OneSignalDialogController sharedInstance] presentDialogWithTitle:@"Location Not Available" withMessage:@"You have previously denied sharing your device location. Please go to settings to enable." withActions:@[@"Open Settings"] cancelTitle:@"Cancel" withActionCompletion:^(int tappedActionIndex) {
         if (tappedActionIndex > -1) {
@@ -324,12 +324,12 @@ static OneSignalLocation* singleInstance = nil;
     [OneSignalLocation sendAndClearLocationListener:ERROR];
 }
 
-+ (void)resetSendTimer {
++ (void)resetSendTimer NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     NSTimeInterval requiredWaitTime = [UIApplication sharedApplication].applicationState == UIApplicationStateActive ? foregroundSendLocationWaitTime : backgroundSendLocationWaitTime;
     sendLocationTimer = [NSTimer scheduledTimerWithTimeInterval:requiredWaitTime target:self selector:@selector(sendLocation) userInfo:nil repeats:NO];
 }
 
-+ (void)sendLocation {
++ (void)sendLocation NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     
     // return if the user has not granted privacy permissions
     if ([OneSignal requiresUserPrivacyConsent])

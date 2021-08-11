@@ -30,7 +30,7 @@
 
 @implementation UIApplication (OneSignal)
 
-+ (BOOL)applicationIsActive {
++ (BOOL)applicationIsActive NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     if ([self isAppUsingUIScene]) {
         if (@available(iOS 13.0, *)) {
             UIWindow *keyWindow = UIApplication.sharedApplication.keyWindow;

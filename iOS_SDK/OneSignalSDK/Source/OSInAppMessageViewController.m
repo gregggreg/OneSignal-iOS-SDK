@@ -260,7 +260,7 @@
  Adds constraints so that the message view has the correct size
  Once the HTML content is loaded, we call animateAppearance() to show the message view
  */
-- (void)addConstraintsForMessage {
+- (void)addConstraintsForMessage NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     [OneSignal onesignal_Log:ONE_S_LL_VERBOSE message:@"Setting up In-App Message Constraints"];
     
     // Initialize the anchors that describe the edges of the view, such as the top, bottom, etc.
@@ -659,7 +659,7 @@
  Override method for handling orientation change within a view controller on iOS 8 or higher
  This specifically handles the resizing and reanimation of a currently showing IAM
  */
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator {
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 
     /*

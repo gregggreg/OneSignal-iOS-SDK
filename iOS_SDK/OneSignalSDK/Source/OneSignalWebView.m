@@ -100,7 +100,7 @@ UIViewController *viewControllerForPresentation;
     [superview layoutIfNeeded];
 }
 
-- (void)showInApp {
+- (void)showInApp NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     // If already presented, no need to present again
     if (!navController) {
         navController = [[UINavigationController alloc] initWithRootViewController:self];

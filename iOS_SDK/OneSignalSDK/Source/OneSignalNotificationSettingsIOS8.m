@@ -36,7 +36,7 @@
     void (^notificationPromptReponseCallback)(BOOL);
 }
 
-- (void)getNotificationPermissionState:(void (^)(OSPermissionState *subscriptionStatus))completionHandler {
+- (void)getNotificationPermissionState:(void (^)(OSPermissionState *subscriptionStatus))completionHandler NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     OSPermissionState* status = OneSignal.currentPermissionState;
     
     status.notificationTypes = UIApplication.sharedApplication.currentUserNotificationSettings.types;
@@ -57,14 +57,14 @@
     return returnStatus;
 }
 
-- (int) getNotificationTypes {
+- (int) getNotificationTypes NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     return UIApplication.sharedApplication.currentUserNotificationSettings.types;
 }
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
-- (void)promptForNotifications:(void(^)(BOOL accepted))completionHandler {
+- (void)promptForNotifications:(void(^)(BOOL accepted))completionHandler NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     UIApplication* sharedApp = [UIApplication sharedApplication];
     
     NSSet* categories = sharedApp.currentUserNotificationSettings.categories;

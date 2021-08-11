@@ -27,7 +27,6 @@
 
 #ifndef UIApplicationDelegate_OneSignal_h
 #define UIApplicationDelegate_OneSignal_h
-NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OneSignalAppDelegate : NSObject
 
 + (void)sizzlePreiOS10MethodsPhase1;

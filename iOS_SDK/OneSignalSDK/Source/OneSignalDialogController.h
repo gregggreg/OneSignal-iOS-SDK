@@ -31,7 +31,6 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^OSDialogActionCompletion)(int tappedActionIndex);
 
-NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OneSignalDialogController : NSObject <UIAlertViewDelegate>
 + (instancetype _Nonnull)sharedInstance;
 - (void)presentDialogWithTitle:(NSString * _Nonnull)title withMessage:(NSString * _Nonnull)message withActions:(NSArray<NSString *> * _Nullable)actionTitles cancelTitle:(NSString * _Nonnull)cancelTitle withActionCompletion:(OSDialogActionCompletion _Nullable)completion;

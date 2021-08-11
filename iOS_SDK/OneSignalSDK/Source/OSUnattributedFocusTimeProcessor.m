@@ -41,13 +41,13 @@ static let UNATTRIBUTED_MIN_SESSION_TIME_SEC = 60;
     return self;
 }
 
-- (void)beginBackgroundFocusTask {
+- (void)beginBackgroundFocusTask NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     focusBackgroundTask = [UIApplication.sharedApplication beginBackgroundTaskWithExpirationHandler:^{
         [self endBackgroundFocusTask];
     }];
 }
 
-- (void)endBackgroundFocusTask {
+- (void)endBackgroundFocusTask NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     [OneSignal onesignal_Log:ONE_S_LL_DEBUG
                      message:[NSString stringWithFormat:@"OSUnattributedFocusTimeProcessor:endDelayBackgroundTask:%lu", (unsigned long)focusBackgroundTask]];
     [UIApplication.sharedApplication endBackgroundTask: focusBackgroundTask];

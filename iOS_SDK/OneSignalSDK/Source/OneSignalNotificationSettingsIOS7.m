@@ -70,7 +70,7 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
-- (void)promptForNotifications:(void(^)(BOOL accepted))completionHandler {
+- (void)promptForNotifications:(void(^)(BOOL accepted))completionHandler NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     notificationPromptReponseCallback = completionHandler;
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
     [OneSignal setWaitingForApnsResponse:true];

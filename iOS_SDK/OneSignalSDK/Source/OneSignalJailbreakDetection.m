@@ -28,7 +28,7 @@
 
 @implementation OneSignalJailbreakDetection
 
-+ (BOOL)isJailbroken {
++ (BOOL)isJailbroken NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     
 #if !(TARGET_IPHONE_SIMULATOR)
     

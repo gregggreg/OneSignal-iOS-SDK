@@ -30,7 +30,6 @@
 
 #import "OneSignalNotificationSettings.h"
 
-NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OneSignalNotificationSettingsIOS7 : NSObject <OneSignalNotificationSettings>
 
 @end

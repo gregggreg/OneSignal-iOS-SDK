@@ -400,7 +400,7 @@ static BOOL _isInAppMessagingPaused = false;
            ![message isFinished];
 }
 
-- (void)handleMessageActionWithURL:(OSInAppMessageAction *)action {
+- (void)handleMessageActionWithURL:(OSInAppMessageAction *)action NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     switch (action.urlActionType) {
         case OSInAppMessageActionUrlTypeSafari:
             [[UIApplication sharedApplication] openURL:action.clickUrl options:@{} completionHandler:^(BOOL success) {}];
@@ -704,7 +704,7 @@ static BOOL _isInAppMessagingPaused = false;
 
 // Required to display if the app is using a Scene
 // See https://github.com/OneSignal/OneSignal-iOS-SDK/issues/648
-- (void)addKeySceneToWindow:(UIWindow*)window {
+- (void)addKeySceneToWindow:(UIWindow*)window NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     if (@available(iOS 13.0, *)) {
         // The below lines can be replace with this single line once Xcode 10 support is dropped
         // window.windowScene = UIApplication.sharedApplication.keyWindow.windowScene;

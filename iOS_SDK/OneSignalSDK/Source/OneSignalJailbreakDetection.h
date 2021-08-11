@@ -24,7 +24,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OneSignalJailbreakDetection : NSObject
 
 + (BOOL)isJailbroken;

@@ -257,7 +257,7 @@ static UNNotificationSettings* cachedUNNotificationSettings;
     return [@"com.apple.UNNotificationDismissActionIdentifier" isEqual:response.actionIdentifier];
 }
 
-+ (void) processiOS10Open:(UNNotificationResponse*)response {
++ (void) processiOS10Open:(UNNotificationResponse*)response NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     if (![OneSignal app_id])
         return;
     
@@ -291,7 +291,7 @@ static UNNotificationSettings* cachedUNNotificationSettings;
                        actionIdentifier:(NSString*)actionIdentifier
                                userText:(NSString*)userText
                 fromPresentNotification:(BOOL)fromPresentNotification
-                  withCompletionHandler:(void(^)())completionHandler {
+                  withCompletionHandler:(void(^)())completionHandler NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     [OneSignal onesignal_Log:ONE_S_LL_VERBOSE message:@"callLegacyAppDeletegateSelector:withCompletionHandler: Fired!"];
     
     UIApplication *sharedApp = [UIApplication sharedApplication];
