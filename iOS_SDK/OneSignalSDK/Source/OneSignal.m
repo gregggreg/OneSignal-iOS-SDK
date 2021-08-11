@@ -831,7 +831,8 @@ static OneSignalOutcomeEventsController *_outcomeEventsController;
 
 // the iOS SDK used to call these selectors as a convenience but has stopped due to concerns about private API usage
 // the SDK will now print warnings when a developer's app implements these selectors
-+ (void)checkIfApplicationImplementsDeprecatedMethods {
+
++ (void)checkIfApplicationImplementsDeprecatedMethods NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     dispatch_async(dispatch_get_main_queue(), ^{
         for (NSString *selectorName in DEPRECATED_SELECTORS)
             if ([[[UIApplication sharedApplication] delegate] respondsToSelector:NSSelectorFromString(selectorName)])
@@ -927,7 +928,7 @@ void onesignal_Log(ONE_S_LOG_LEVEL logLevel, NSString* message) {
 }
 
 //presents the settings page to control/customize push notification settings
-+ (void)presentAppSettings {
++ (void)presentAppSettings NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     
     //only supported in 10+
     if ([OneSignalHelper isIOSVersionLessThan:@"10.0"])
@@ -954,7 +955,7 @@ void onesignal_Log(ONE_S_LOG_LEVEL logLevel, NSString* message) {
 }
 
 // iOS 8+, only tries to register for an APNs token
-+ (BOOL)registerForAPNsToken {
++ (BOOL)registerForAPNsToken NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     if ([OneSignalHelper isIOSVersionLessThan:@"8.0"])
         return false;
     
@@ -2168,7 +2169,7 @@ static NSString *_lastnonActiveMessageId;
     }
 }
     
-+ (BOOL)clearBadgeCount:(BOOL)fromNotifOpened {
++ (BOOL)clearBadgeCount:(BOOL)fromNotifOpened NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     
     NSNumber *disableBadgeNumber = [[NSBundle mainBundle] objectForInfoDictionaryKey:ONESIGNAL_DISABLE_BADGE_CLEARING];
     
@@ -2278,7 +2279,7 @@ static NSString *_lastnonActiveMessageId;
     [OneSignal updateDeviceToken:parsedDeviceToken];
 }
     
-+ (BOOL)remoteSilentNotification:(UIApplication*)application UserInfo:(NSDictionary*)userInfo completionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
++ (BOOL)remoteSilentNotification:(UIApplication*)application UserInfo:(NSDictionary*)userInfo completionHandler:(void (^)(UIBackgroundFetchResult))completionHandler NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     var startedBackgroundJob = false;
     
     NSDictionary* richData = nil;
@@ -2323,7 +2324,7 @@ static NSString *_lastnonActiveMessageId;
 }
 
 // iOS 8-9 - Entry point when OneSignal action button notification is displayed or opened.
-+ (void)processLocalActionBasedNotification:(UILocalNotification*) notification identifier:(NSString*)identifier {
++ (void)processLocalActionBasedNotification:(UILocalNotification*) notification identifier:(NSString*)identifier NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     if ([OneSignal shouldLogMissingPrivacyConsentErrorWithMethodName:nil])
         return;
     

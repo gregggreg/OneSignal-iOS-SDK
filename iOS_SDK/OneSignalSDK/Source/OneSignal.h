@@ -457,7 +457,6 @@ extern NSString * const kOSSettingsKeyInFocusDisplayOption;
 extern NSString * const kOSSettingsKeyProvidesAppNotificationSettings;
 
 // ======= OneSignal Class Interface =========
-NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface OneSignal : NSObject
 
 extern NSString* const ONESIGNAL_VERSION;
