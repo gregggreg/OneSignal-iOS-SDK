@@ -67,6 +67,7 @@ NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 
 @end
 
+NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication")
 @interface DummyOSMessagingController : OSMessagingController @end
 
 NS_ASSUME_NONNULL_END
