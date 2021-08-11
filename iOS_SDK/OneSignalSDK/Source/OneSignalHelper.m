@@ -169,7 +169,8 @@
 @implementation OSNotification
 @synthesize payload = _payload, shown = _shown, isAppInFocus = _isAppInFocus, silentNotification = _silentNotification, displayType = _displayType, mutableContent = _mutableContent;
 
-- (id)initWithPayload:(OSNotificationPayload *)payload displayType:(OSNotificationDisplayType)displayType {
+
+- (id)initWithPayload:(OSNotificationPayload *)payload displayType:(OSNotificationDisplayType)displayType NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     self = [super init];
     if (self) {
         _payload = payload;
@@ -298,13 +299,13 @@ static NSString *_lastMessageIdFromAction;
 
 UIBackgroundTaskIdentifier mediaBackgroundTask;
 
-+ (void) beginBackgroundMediaTask {
++ (void) beginBackgroundMediaTask NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     mediaBackgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         [OneSignalHelper endBackgroundMediaTask];
     }];
 }
 
-+ (void) endBackgroundMediaTask {
++ (void) endBackgroundMediaTask NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     [[UIApplication sharedApplication] endBackgroundTask: mediaBackgroundTask];
     mediaBackgroundTask = UIBackgroundTaskInvalid;
 }
@@ -522,7 +523,7 @@ OSHandleNotificationActionBlock handleNotificationAction;
 }
 
 // For iOS 8 and 9
-+ (UILocalNotification*)createUILocalNotification:(OSNotificationPayload*)payload {
++ (UILocalNotification*)createUILocalNotification:(OSNotificationPayload*)payload NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     let notification = [UILocalNotification new];
     
     let category = [UIMutableUserNotificationCategory new];
@@ -915,7 +916,7 @@ static OneSignal* singleInstance = nil;
     return [urlScheme isEqualToString:@"http"] || [urlScheme isEqualToString:@"https"];
 }
 
-+ (void) displayWebView:(NSURL*)url {
++ (void) displayWebView:(NSURL*)url NS_EXTENSION_UNAVAILABLE_IOS("Refrences UIApplication") {
     // Check if in-app or safari
     __block BOOL inAppLaunch = [OneSignalUserDefaults.initStandard getSavedBoolForKey:OSUD_NOTIFICATION_OPEN_LAUNCH_URL defaultValue:true];
     
