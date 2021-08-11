@@ -46,7 +46,7 @@
 
 @implementation OneSignalAlertView
 
-+ (void)showInAppAlert:(NSDictionary*)messageDict {
++ (void)showInAppAlert:(NSDictionary*)messageDict NS_EXTENSION_UNAVAILABLE_IOS("Use UIAlertController instead.")  {
     let payload = [OSNotificationPayload parseWithApns:messageDict];
     
     id oneSignalAlertViewDelegate = [[OneSignalAlertViewDelegate alloc] initWithMessageDict:messageDict];
